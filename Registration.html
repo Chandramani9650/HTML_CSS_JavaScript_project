@@ -27,16 +27,19 @@
 	<script type="text/javascript">
         var h1 = document.getElementById("dName")
         var h2 = document.getElementById("dGender")
-        var h3 = document.getElementById("dEmail").innerText
+        var h3 = document.getElementById("dEmail")
         var h4 = document.getElementById("dMobile")
-        var name = document.getElementById("name")
-        var email = document.getElementById("email")
+      
+        
         let mobile = document.getElementById("mobile")
         let gen = document.getElementById("gender")
        
 		function showName() {
 			// Show filled name inside h1
-            h1.textContent = name.name
+            // h1.textContent = name.value
+			var name = document.getElementById("name")
+			h1.textContent = name.value
+			// console.log(name.value)
             
 		}
 
@@ -45,8 +48,10 @@
 		}
 
 		function showEmail() {
+			var email = document.getElementById("email")
 			// Show the filled email inside h3
             h3.textContent = email.value
+			console.log(email.value)
 		}
 
 		function showMobile() {
@@ -56,6 +61,8 @@
 
 		function resetForm() {
 			// Reset all the form elements to default values (blank "")
+			var name = document.getElementById("name")
+			h1.innerText = 
 		}
 
 		function resetDisplay() {
