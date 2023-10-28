@@ -44,29 +44,36 @@
 		}
 
 		function showGender(){
-			h2.textContent = gen.value
+			h2.textContent =  gen.value
 		}
 
 		function showEmail() {
 			var email = document.getElementById("email")
 			// Show the filled email inside h3
-            h3.textContent = email.value
-			console.log(email.value)
+            h3.textContent =  email.value
+			
 		}
 
 		function showMobile() {
 			// Show the filled mobile inside h4
-            h4.textContent=mobile.value
+            h4.textContent= h4.innerText+":"+mobile.value
 		}
 
 		function resetForm() {
 			// Reset all the form elements to default values (blank "")
-			var name = document.getElementById("name")
-			h1.innerText = ""
+			// var name = document.getElementById("name")
+			
+
+			
 		}
 
 		function resetDisplay() {
 			// Reset all the headings (h1, h2, h3, h4) to blank values
+			h1.innerText = " "
+			h2.innerText = " "
+			h3.innerText = " "
+			h4.innerText = " "
+
 		}
 	</script>
 </body>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            padding: 20px;
+        }
+        h1{
+            width:200px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h2>print here</h2>
+    <h1></h1>
+    <!-- <button id="btn">click me</button> -->
+    <div id="cal">
+        <button>0</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+    </div>
+    <div id="ope">
+        <button>+</button>
+        <button>-</button>
+        <button>*</button>
+        <button>/</button>
+        <button>%</button>
+       
+       
+    </div>
+   
+        <button id="equal">=</button>
+   
+</body>
+</html>
+<script>
+    let hr = document.querySelector('h1');
+    let calcu = document.querySelectorAll('#cal > button')
+    let FirstNumber = ""
+    let isoperator = true
+    let SceondNumber = ""
+    let operator = ""
+    let eq = document.getElementById("equal")
+     eq.addEventListener('click',function(){
+       hr.innerText = calculation(FirstNumber, SceondNumber, operator)
+       console.log(hr.innerText)
+   })
+  
+    for(let i =0;i<calcu.length;i++){
+        calcu[i].addEventListener('click', function(){
+         if(isoperator==true){
+            FirstNumber+=calcu[i].innerText
+            hr.innerText = FirstNumber
+
+         }else{
+            SceondNumber+=calcu[i].innerText
+            hr.innerText = SceondNumber
+            console.log(SceondNumber)
+         }
+    })
+    }
+    let operat = document.querySelectorAll('#ope > button')
+    for(let j=0;j<operat.length;j++){
+        operat[j].addEventListener('click', function(){
+         isoperator = false
+         operator = operat[j].innerText
+
+        })
+    }
+    function calculation(FirstNumber, SceondNumber,operator){
+        switch(operator){
+            case '+':
+                return Number(FirstNumber)+Number(SceondNumber)
+            case '*':
+                return Number(FirstNumber)*Number(SceondNumber)
+            case '/':
+                return Number(FirstNumber)/Number(SceondNumber)
+            case '-':
+                return Number(FirstNumber)-Number(SceondNumber)
+            case '%':
+                return Number(FirstNumber)%Number(SceondNumber)
+            
+            
+
+        }
+    }
+
+    
+
+
+</script>
