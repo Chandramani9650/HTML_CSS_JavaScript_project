@@ -99,6 +99,7 @@ button{
     /* border: 2px solid green; */
      background-color: black;   
 }
+
 .box1 div h1{
     margin-top: 20%;
     /* border: 1px solid red; */
@@ -106,7 +107,7 @@ button{
 
 
 .box2{
-    margin-top: 10px;
+    margin-top: 8px;
    display: grid;
  
    grid-template-columns:40% 35%;
@@ -134,7 +135,7 @@ button{
 }
 
 .box3{
-    margin-top: 10px;
+    margin-top: 8px;
     display: grid;
  
     grid-template-columns:40% 35%;
@@ -149,7 +150,7 @@ button{
      background-color: black;  
 }
 .box4{
-    margin-top: 10px;
+    margin-top: 8px;
     display: grid;
  
     grid-template-columns:40% 35%;
@@ -165,3 +166,141 @@ button{
 }
 
 
+.box5{
+    
+  /* text-align: center; */
+  width: 100%;
+  
+  /* margin: auto; */
+  margin-top: 8px;
+  background-color: black;
+  border: 1px solid black;
+}
+.box5 div{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    background-color: black;
+    /* border: 1px solid rgb(7, 182, 7); */
+}
+
+
+@media screen and (max-width:770px){
+    
+    .box1,.box3,.box4{
+       display:inline-block; 
+       
+      
+    
+    }
+    .box1,.box3,.box4 div{
+        width:100%;
+        /* margin-top: 40px; */
+        text-align: center;
+    }
+    
+
+    .box2{
+       display:inline-block;
+       
+    }
+    .box2 div{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+.h1{
+padding-top: 80px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+   
+}
+
+#Question p{
+    background-color: #2b2a2a;
+    padding: 30px;
+    text-align: left;
+    
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+#Question p:hover{
+    background-color: #474646;
+}
+
+
+#Question div{
+    background-color:#2b2a2a;
+    
+    margin-top: 1px;
+    width: 100%;
+    text-align: left;
+    transition: 0.5s;
+    /* padding: 20px; */
+    font-size: 22px;
+    /* border: 1px solid red; */
+    max-height: 0;
+    overflow: hidden;
+}
+#lower{
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 70px;
+    /* border: 1px solid red; */
+}
+#lower p{
+    font-size: 20px;
+}
+#lower input{
+    padding: 18px 180px 18px 10px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+#lower button{
+padding: 15px;
+font-size: 20px;
+}
+/* ........................................... */
+
+#footer{
+    margin-top: 6px;
+    border: 1px solid black;
+    width: 100%;
+    height: 60vh;
+    background-color: black;
+}
+#footer>div{
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+    /* border: 1px solid red; */
+}
+#linka{
+    width: 100%;
+    display: flex;
+ /* border: 1px solid red; */
+ 
+}
+#linka>a{
+   flex-basis: 25%;
+   padding: 10px; 
+   color: #fff;
+   font-size: 14px;
+}
+a{
+    color: #fff;
+}
+/* #trans{
+    width: 30px;
+    padding: 0px;
+    text-align: center;
+    height: 5px;
+} */
