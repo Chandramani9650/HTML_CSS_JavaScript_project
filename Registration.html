@@ -33,46 +33,52 @@
         
         let mobile = document.getElementById("mobile")
         let gen = document.getElementById("gender")
-       
+		let name = document.getElementById("name")
+		let email = document.getElementById("email")
+
+		console.log(name.value)
 		function showName() {
 			// Show filled name inside h1
-            // h1.textContent = name.value
-			var name = document.getElementById("name")
-			h1.textContent = name.value
-			console.log(h1)
+            h1.textContent = `NAME: ${name.value}`
+
+		
+		
+			
             
 		}
 
 		function showGender(){
-			h2.textContent =  gen.value
+			h2.textContent = "GENDER: "+ gen.value
 		}
 
 		function showEmail() {
-			var email = document.getElementById("email")
-			// Show the filled email inside h3
-            h3.textContent =  email.value
+			h3.innerText = `EMAIL: ${email.value}`
 			
 		}
 
 		function showMobile() {
 			// Show the filled mobile inside h4
-            h4.textContent= mobile.value
+            h4.textContent= `MOBILE:  ${mobile.value}`
 		}
 
 		function resetForm() {
 			// Reset all the form elements to default values (blank "")
 			// var name = document.getElementById("name")
-			h1.resetForm
-
+			// h1.innerText = h1.value
+		
+			h1.innerText = "NAME"
+			h2.innerText = "GENDER"
+			h3.innerText = "EMAIL"
+			h4.innerText = "MOBILE"
 			
 		}
 
 		function resetDisplay() {
 			// Reset all the headings (h1, h2, h3, h4) to blank values
-			h1.innerText = " "
-			h2.innerText = " "
-			h3.innerText = " "
-			h4.innerText = " "
+			h1.innerText = "NAME"
+			h2.innerText = "GENDER"
+			h3.innerText = "EMAIL"
+			h4.innerText = "MOBILE"
 
 		}
 	</script>

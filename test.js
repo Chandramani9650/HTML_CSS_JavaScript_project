@@ -23,20 +23,27 @@
 //     console.log("hello world")
 // }
 num = 5
-for(let i =1;i<=num;i++){
-    let s= ""
-    let bag = "-"
-    for(let j=1;j<=2*num-2*i+1;j++){
-        if(j%2===1){
-            s+="*"
-       }else{
-           s+=bag
-       }
+// for(let i =1;i<=num;i++){
+//     let s= ""
+//     let bag = "-"
+//     for(let j=1;j<=2*num-2*i+1;j++){
+//         if(j%2===1){
+//             s+="*"
+//        }else{
+//            s+=bag
+//        }
     
     
-}
-for(var k=0;k<2*i-2;k++){
-    s+=bag
-}
-console.log(s)
+// }
+// for(var k=0;k<2*i-2;k++){
+//     s+=bag
+// }
+// console.log(s)
+// }
+let b = 'abcdef'
+let d = 'abcdef'
+if(b==d){
+    console.log("yes")
+}else{
+    console.log("no")
 }
