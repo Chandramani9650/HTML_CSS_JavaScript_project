@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        #div div{
+            width: 300px;
+            /* height: 40px; */
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+           /* background-color: red; */
+           
+            margin: auto;
+           
+        }
+        p{
+            background-color: rgb(238, 0, 255);
+        
+            padding: 8px 20px 8px 20px;
+            border-radius: 5px;
+            margin-top: 4px;
+        }
+        h1{
+            background-color: red;
+            padding: 20px 40px;
+            border-radius: 20px;
+            margin-bottom: 0;
+
+        }
+        h2{
+            text-align: center;
+            font-size: 30px;
+            background-color: aqua;
+            padding: 20px ;
+            width: 200px;
+            margin: auto;
+            border-radius: 5px;
+        }
+        #button{
+            margin: auto;
+            width: 200px;
+            margin-top: 40px;
+
+        }
+        button{
+            padding: 20px;
+            color: red;
+            background-color: rgb(56, 54, 54);
+            border-radius: 5px;
+            margin: 5px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="div">
+        <div>
+        <h1>34</h1>
+        <h1>180</h1>
+        </div>
+        <div>
+            <p>MIN</p>
+            <p>MAX</p>
+        </div>
+       </div>
+       <h2 id="h2">SCORE</h2>
+
+       <div id="button">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>0</button>
+        <div style="display: flex;"><button id="Enter">ENTER</button>
+        <button id="Reset">RESET</button></div>
+       </div>
+       
+     
+</body>
+</html>
+<script>
+  let h1 = document.getElementsByTagName("h1")
+  let h2 = document.getElementById("h2")
+  let btn = document.querySelectorAll("#button>button")
+  let Enter = document.getElementById("Enter")
+  let reset = document.getElementById("Reset")
+  let number = ""
+  for(let i =0;i<btn.length;i++){
+   
+    btn[i].addEventListener('click',function(){
+
+        number+=btn[i].innerText
+        h2.innerText = number
+       
+      
+
+    })
+    
+  }
+
+  
+  function comparison(){
+   Enter.addEventListener('click',function(){
+    let num = Number(number)
+    let h11 = Number(h1[0].innerText)
+    let h22 = Number(h1[1].innerText)
+    if(num<h11){
+        h1[0].innerText = num
+    }else if(num>h22){
+        h1[1].innerText = num
+    }
+   })  
+  }
+  comparison(number)
+
+  
+  function reet(){
+  reset.addEventListener('click',function(){
+    h1[0].innerText = "34"
+    h1[1].innerText = "180"
+    h2.innerText = "SCORE"
+    number = ""
+
+})
+  }
+  reet()
+</script>
