@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   body{
+    font-family: sans-serif;
+    padding: 10px;
+    }
+    div{
+        display: flex;
+        margin-left: 10px;
+    }
+    #box1{
+        border: 1px solid black;
+        /* flex-basis: 30%; */
+        padding:10px;
+    }
+    #box2{
+        width: 100%;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    input{
+        width:210px;
+        padding: 10px;
+        margin-top: 5px;
+    }
+    select{
+      
+        padding: 10px;
+    }
+
+    table{
+        font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  height: 20px;
+  /* margin: auto; */
+  /* margin-top: 50px; */
+  text-align: center;
+    }
+
+    table td,
+table th {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+  text-align: center;
+  
+  
+}
+
+    label{
+        margin-bottom: 10px;
+    }
+    table tr th{
+        padding: 10px;
+       
+       background-color: rgb(74, 150, 83);
+       color: #fff;
+    }
+    tbody td{
+border: 1px solid black;
+    border-collapse: collapse;
+    }
+    </style>
+</head>
+<body>
+    <!-- Use this form for data input  -->
+    <h2 style="text-align: center;">HOSPITAL - DOCTOR RECORDS</h2>
+   <div>
+    <div id="box1">
+        <form>
+            <label for="">Doctor Name</label>
+            <input placeholder="Name" type="text" id="name">
+            <label for="">Doctor Id</label>
+            <input placeholder="Doctor ID" type="text" id="doctor_id">
+            <label for="">Specilization</label>
+            <select id="specialization">
+              <option value="">Select Specialization</option>
+              
+              <option value="Dermatologist">Dermatologist</option>
+              <option value="Dentist">Dentist</option>
+              <option value="Gynecologist">Gynecologist</option>
+            </select>
+            <label for="">Experience</label>
+            <input placeholder="Experience" type="number" id="experience">
+            <label for="">Enter Email</label>
+            <input placeholder="Email" type="email" id="email">
+            <label for="">Enter Mobile</label>
+            <input placeholder="Mobile No." type="number" id="mobile">
+           
+
+         
+              <input type="submit" value="Submit">
+          </form>
+      
+          <!-- Use this Select tag for filter part  -->
+         
+    </div>
+   <div id="box2">
+    <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Doctor ID</th>
+            <th>Specialization</th>
+            <th>Experience in Years</th>
+            <th>Email</th>
+            <th>Mobile No</th>
+            <th>Role</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Append Rows here using JS & DOM  -->
+        </tbody>
+      </table>
+   </div>
+  
+   </div>
+  
+  <script>
+   let form = document.querySelector("form")
+   let name = document.getElementById("name")
+   let id = document.getElementById("doctor_id")
+   let select = document.querySelector("select")
+   let experience = document.getElementById("experience")
+   let email = document.getElementById("email")
+   let mobile = document.getElementById("mobile")
+   let tbody = document.querySelector("tbody")
+   let arr = []
+
+
+   form.addEventListener('submit', function(r){
+  r.preventDefault()
+   let obj = {}
+   obj.name = name.value
+  obj.id = id.value
+  obj.select = select.value
+  obj.experience = experience.value
+  obj.email = email.value
+  obj.mobile = mobile.value
+  arr.push(obj)
+  arr.map((el)=>{
+   let tr = document.createElement("tr")
+   let td1 = document.createElement("td")
+   let td2 = document.createElement("td")
+   let td3 = document.createElement("td")
+   let td4 = document.createElement("td")
+   let td5 = document.createElement("td")
+
+   let td6 = document.createElement("td")
+   let role = document.createElement("td")
+   let td7 = document.createElement("td")
+
+
+   td1.innerText = el.name
+   td2.innerText = el.id
+   td3.innerText = el.select
+   td4.innerText = el.experience
+   td5.innerText = el.email
+   td6.innerText = el.mobile
+   if(Number(experience.value)>5){
+            role.innerText = "Senior"
+    }else if(Number(experience.value)<=5 && Number(experience.value)>=2){
+            role.innerText = "Junior"
+    
+     }else{
+            role.innerText = "Fresure"
+        }
+   td7.innerText = "Delete"
+
+   td7.addEventListener('click', function(){
+    tr.innerText = ""
+   })
+   td7.style.backgroundColor = "red"
+   td7.style.cursor = "pointer"
+
+   tr.append(td1, td2, td3, td4, td5, td6,role, td7)
+   tbody.append(tr)
+   
+  })
+
+  arr = []
+
+   })
+
+
+  </script>
+
+</body>
+</html>
